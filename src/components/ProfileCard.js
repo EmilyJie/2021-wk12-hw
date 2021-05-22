@@ -17,7 +17,7 @@ const ProfileCard = () => {
   const [form] = Form.useForm();
 
   const checkOrder = () => {
-    setPage(dispatch, "/",  "NORDIC NEST Shopping Cart");
+    setPage(dispatch, "/OrderList");
     history.push("/");
   };
 
