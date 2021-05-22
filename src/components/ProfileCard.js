@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Form, Input, Button } from "antd";
 import { logoutFromFirebase, updateUserInfo } from "../actions";
 import { StoreContext } from "../store";
+import { setPage } from "../actions"
 
 const ProfileCard = () => {
   const {
@@ -15,6 +16,11 @@ const ProfileCard = () => {
   const history = useHistory();
   const [form] = Form.useForm();
 
+  const checkOrder = () => {
+    setPage(dispatch, "/",  "NORDIC NEST Shopping Cart");
+    history.push("/");
+  };
+
   const handleUpdate = (values) => {
     console.log(values)
     updateUserInfo(dispatch, values);
@@ -24,6 +30,7 @@ const ProfileCard = () => {
     logoutFromFirebase(dispatch);
     history.push("/");
   };
+
   return (
     <Form
       onFinish={handleUpdate}
@@ -103,9 +110,9 @@ const ProfileCard = () => {
       </Form.Item>
 
         <Button
-          type="info"
+          type="Info"
           className="login-form__button"
-          onClick={handleLogout}
+          onClick={checkOrder}
         >
           Order
         </Button>
