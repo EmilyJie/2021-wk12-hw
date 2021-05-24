@@ -4,7 +4,7 @@ import { Form, Input, Button ,Row, Col, Spin} from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import { logoutFromFirebase, updateUserInfo, getOrderID } from "../actions";
 import { StoreContext } from "../store";
-
+ㄋ
 const ProfileCard = () => {
   const {state: {userSignin: { userInfo },  searchOrderByid: {
     loading,
@@ -142,7 +142,7 @@ const ProfileCard = () => {
       </Form>
 
     <div class="userOrderList">
-      { tapOrNot?( loading
+      { tapOrNot ? ( loading
             ? (
                <div className="spinner-wrap">
                   <Spin indicator={antIcon} className="spinner" />
