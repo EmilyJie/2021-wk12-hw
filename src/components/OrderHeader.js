@@ -1,10 +1,20 @@
-export default function ShippingHeader(props) {
+import { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { StoreContext } from "../store";
+import { setPage } from "../actions"
 
+export default function ShippingHeader(props) {
+  const { dispatch } = useContext(StoreContext);
+  const history = useHistory();
+  const onClickHeader = () => {
+    setPage(dispatch, "/");
+    history.push("/");
+  };
   return (
     <header className="header">
       <div className="header-wrap">
         <div className="header-text">
-          <h1 className="header-title" >{props.title}</h1>
+          <h1 className="header-title" onClick={onClickHeader}>{props.title}</h1>
         </div>
       </div>
     </header>

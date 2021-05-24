@@ -124,4 +124,3 @@ export const checkLoginApi = () => {
   const user = auth.currentUser;
   return user.uid?  true : false;
 }
-
