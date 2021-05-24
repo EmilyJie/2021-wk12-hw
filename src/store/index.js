@@ -117,11 +117,11 @@ const initialState = {
     userInfo: null,
     error: "",
   },
-  searchOrderDetailByUid: {
+  searchOrderByid: {
     loading: false,
     order: [],
     error: null,
-    tapOrNot:false
+    tapOrNot: false
   },
 };
 
@@ -261,8 +261,6 @@ function reducer(state, action) {
       };
     case LOGOUT_REQUEST:
       cartItems = [];
-      state.searchOrderDetailByUid.order=[];
-      state.searchOrderDetailByUid.tapOrNot=false;
       return {
         ...state,
         userSignin: {
@@ -377,18 +375,18 @@ function reducer(state, action) {
     case GET_USER_ORDERS:
       return{
         ...state,
-        searchOrderDetailByUid: {
-          ...state.searchOrderDetailByUid,
+        searchOrderByid: {
+          ...state.searchOrderByid,
           loading: true,
-          tapOrNot:true
+          tapOrNot: true,
         },
       };
     case SUCCESS_USER_ORDERS:
       console.log()
       return {
       ...state,
-      searchOrderDetailByUid: {
-        ...state.searchOrderDetailByUid,
+      searchOrderByid: {
+        ...state.searchOrderByid,
         loading: false,
         order: action.payload,
         error: null,
@@ -397,10 +395,10 @@ function reducer(state, action) {
     case FAIL_USER_ORDERS:
       return{
         ...state,
-        searchOrderDetailByUid: {
-          ...state.searchOrderDetailByUid,
+        searchOrderByid: {
+          ...state.searchOrderByid,
           loading: false,
-          error:action.payload
+          error: action.payload
         },
       };
     default:

@@ -6,7 +6,7 @@ import { logoutFromFirebase, updateUserInfo, getOrderID } from "../actions";
 import { StoreContext } from "../store";
 
 const ProfileCard = () => {
-  const {state: {userSignin: { userInfo },  searchOrderDetailByUid: {
+  const {state: {userSignin: { userInfo },  searchOrderByid: {
     loading,
     order,
     tapOrNot
